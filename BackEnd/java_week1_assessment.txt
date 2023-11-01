@@ -1,0 +1,210 @@
+Q1.
+package kkk;
+
+import java.util.Scanner;
+
+public class salary {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int salary_amount;
+		float hra,da,gross_salary = 0;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the basic salary amount:");
+		salary_amount=sc.nextInt();
+		if(salary_amount>=1 && salary_amount<=4000) {
+			hra=(salary_amount/100)*10;
+			da=(salary_amount/100)*50;
+			gross_salary=salary_amount+hra+da;
+		}
+	    if(salary_amount>=4001 && salary_amount<=8000) {
+			hra=(salary_amount/100)*20;
+			da=(salary_amount/100)*60;
+			gross_salary=salary_amount+hra+da;
+		}
+	    if(salary_amount>=8001 && salary_amount<=12000) {
+			hra=(salary_amount/100)*25;
+			da=(salary_amount/100)*70;
+			gross_salary=salary_amount+hra+da;
+		}
+	    if(salary_amount>=12000) {
+	    	hra=(salary_amount/100)*30;
+			da=(salary_amount/100)*80;
+			gross_salary=salary_amount+hra+da;
+	    }
+	    System.out.println("The gross salary is :"+ gross_salary);
+	    sc.close();
+	}
+
+}
+
+
+
+
+Q2.
+package kkk;
+
+import java.util.Scanner;
+
+public class duplicate {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Enter the number of elements : ");
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		System.out.println("Enter the Array Values : ");
+		for(int i=0;i<n;i++)
+			arr[i]=sc.nextInt();
+		for(int i=0;i<n;i++)
+		{
+			for(int j=i+1;j<n;j++)
+			{
+				if(arr[i]==0)
+					break;
+				if(arr[i]==arr[j])
+					arr[j]=0;
+			}
+		}
+		for(int i=0;i<arr.length;i++)
+		{
+			if(arr[i]!=0)
+				System.out.println(arr[i]);
+		}
+	}
+
+}
+
+
+Q3.
+package kkk;
+import java.util.*;
+public class reverseint {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int num;
+		System.out.println("Enter a number");
+		Scanner sc=new Scanner(System.in);
+		num=sc.nextInt();
+		int num1=num;
+		int rev=0;
+		if(num>1000 && num<10000) {
+			 while(num>0){
+	              int a=num%10;
+	              rev=rev * 10 + a;
+	              num=num/10;
+	          }
+         System.out.println(rev);
+
+		if(rev==num1) {
+			System.out.println("Given number is palindrome");
+		}
+		else {
+			System.out.println("Given number is not palindrome");
+		}
+		}
+		else {
+			System.out.println("Invalid number");
+		}
+sc.close();
+
+	}
+
+}
+
+
+Q4.
+package kkk;
+
+
+public class employeedata {
+	private String name;
+	private int age;
+	private float salary;
+	
+	
+	public employeedata(String name, int age, float basic, float hra, float da, float specialAllowance) {
+        this.name = name;
+        this.age = age;
+        this.salary = calculateSalary(basic, hra, da, specialAllowance);
+        
+	}
+	 private float calculateSalary(float basic, float hra, float da, float specialAllowance) {
+	        return basic + hra + da + specialAllowance;
+	    }
+    
+   
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public float getSalary() {
+		return salary;
+	}
+
+	public void setSalary(float salary) {
+		this.salary = salary;
+	}
+	
+	 public void displayDetails() {
+	        System.out.println("Name: " + name);
+	        System.out.println("Age: " + age);
+	        System.out.println("Salary: " + salary);
+	    }
+}
+
+
+
+
+ 
+package kkk;
+
+import java.util.Scanner;
+
+public class employeedatawithsalary {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        Scanner sc = new Scanner(System.in);
+        employeedata[] employees = new employeedata[2];
+        for (int i = 0; i < 2; i++)
+        {
+            System.out.println("details of  Employee " + (i + 1));
+            System.out.print("Name: ");
+            String name = sc.nextLine();
+            System.out.print("Age: ");
+            int age = sc.nextInt();
+            System.out.print("Basic Salary: ");
+            float basic = sc.nextFloat();
+            System.out.print("HRA: ");
+            float hra = sc.nextFloat();
+            System.out.print("DA: ");
+            float da = sc.nextFloat();
+            System.out.print("Special Allowance : ");
+            float specialAllowance = sc.nextFloat();
+            employees[i] = new employeedata(name, age, basic, hra, da, specialAllowance);
+            sc.nextLine();
+        }
+
+        for (int i = 0; i < 2; i++) {
+            System.out.println("\nEmployee " + (i + 1) + " Details:");
+            employees[i].displayDetails();
+        }
+sc.close();
+	}
+
+}

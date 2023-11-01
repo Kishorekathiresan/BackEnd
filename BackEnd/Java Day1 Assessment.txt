@@ -1,0 +1,173 @@
+1.Write a program to find out the sum of squares of n numbers.
+
+import java.util.*;
+
+class squareSum {
+    public static void main(String[] args) {
+        int n;
+        int sqvalue=0;
+        Scanner ss=new Scanner(System.in);
+        n=ss.nextInt();
+        for(int i=1;i<=n;i++){
+            sqvalue+=(i*i);
+        }
+        System.out.println("Sum of the Square of n values :"+sqvalue);
+    }
+}
+
+
+2. Write a program to find out the factorial of a given number.
+
+
+import java.util.*;
+class Factorial {
+    public static void main(String[] args) {
+         int n;
+         Scanner fn = new Scanner(System.in);
+         System.out.println("Enter a number :");
+         n = fn.nextInt();
+         int fact =1;
+         for (int i=1; i<=n; i++){
+             fact *= i;
+         }
+         System.out.println("Factorial value of "+n+" is "+fact);
+    }
+        
+}
+
+ 
+
+3. Write a program to find whether the given number is prime number or not.
+
+
+import java.util.*;
+class PrimeNumber {
+    public static void main(String[] args) {
+         int n;
+         Scanner pn = new Scanner(System.in);
+         System.out.println("Enter a number :");
+         n = pn.nextInt();
+         int count=0;
+         for (int i=1; i<=n; i++){
+             if(n%i==0){
+                 count++;
+             }
+         }
+         if(count==2){
+             System.out.println("It is a Prime Number");
+         }
+         else{
+             System.out.println("It is not Prime Number");
+         }
+    }
+}
+
+ 
+4.* Write a program to list all prime numbers below 200.
+
+import java.util.*;
+class PrimeNumber {
+    public static void main(String[] args) {
+         int n;
+         Scanner pn = new Scanner(System.in);
+         System.out.println("Enter a number :");
+         n = pn.nextInt();
+         int count=0;
+         for (int i=1; i<=n; i++){
+             for(int j=1;j<=i;j++){
+                  if(i%j==0){
+                      count++;
+                  }
+             }
+              if(count==2){
+                     System.out.println(i);
+              }
+              count=0;
+         }
+    }
+}
+
+
+5.*Write a program to generate Fibonacci series up to n.
+
+import java.util.*;
+class Fibonacci {
+    public static void main(String[] args) {
+        Scanner fc = new Scanner(System.in);
+        int n;
+        System.out.println("Enter a number :");
+        n = fc.nextInt();
+        int n1 = 0;
+        int n2 = 1;
+        System.out.println(n1+"\n");
+        System.out.println(n2);
+        int n3;
+        for (int i = 2; i < n; i++) {
+            n3 = n1 + n2;
+            System.out.println(n3);
+            n1 = n2;
+            n2 = n3;
+        }
+    }
+}
+
+
+ 
+
+6. Write a program to find out the sum of digits of a given number.
+
+import java.util.*;
+class DigitsSum {
+    public static void main(String[] args) {
+        Scanner ds = new Scanner(System.in);
+        int n;
+        System.out.println("Enter a number :");
+        n = ds.nextInt();
+        int num,sum=0;
+        while(n!=0){
+            num=n%10;
+            sum += num;
+            n=n/10;
+        }
+        System.out.println("sum of the digits of given number: " +sum);
+    }
+}
+
+7. Write a program to read an array of 10 numbers and compute the sum, average, largest, second largest and smallest number.
+
+import java.util.*;
+class ArrayOperations {
+    public static void main(String[] args) {
+        Scanner ao = new Scanner(System.in);
+        int[] n = new int[10];
+        System.out.println("Enter 10 numbers:");
+        for (int i = 0; i < 10; i++) {
+            n[i] = ao.nextInt();
+        }
+        int sum = 0;
+        for (int i = 0; i < 10; i++) {
+            sum += n[i];
+        }
+        double average = (double) sum / 10;
+        int largest = n[0];
+        int secondLargest = n[0];
+        int smallest = n[0];
+        for (int i = 0; i < 10; i++) {
+            if (n[i] > largest) {
+                secondLargest = largest;
+                largest = n[i];
+            } else if (n[i] > secondLargest && n[i] != largest) {
+                secondLargest =n[i];
+            }
+            if (n[i] < smallest) {
+                smallest = n[i];
+            }
+        }
+        System.out.println("Sum: " + sum);
+        System.out.println("Average: " + average);
+        System.out.println("Largest: " + largest);
+        System.out.println("Second Largest: " + secondLargest);
+        System.out.println("Smallest: " + smallest);
+    }
+}
+

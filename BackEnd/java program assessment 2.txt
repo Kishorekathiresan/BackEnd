@@ -1,0 +1,115 @@
+1.	Write a program to find out the sum of squares of n numbers.
+
+import java.util.*;
+
+class squareSum {
+    public static void main(String[] args) {
+        int n;
+        int sqvalue=0;
+        Scanner ss=new Scanner(System.in);
+        n=ss.nextInt();
+        for(int i=1;i<=n;i++){
+            sqvalue+=(i*i);
+        }
+        System.out.println("Sum of the Square of n values :"+sqvalue);
+    }
+}
+
+2.	 Write a program to find out the factorial of a given number.
+
+
+import java.util.Scanner;
+class Factorial {
+    public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+
+  System.out.println("Enter a number :");
+  int Value = sc.nextInt();
+  int fact =1;
+
+  for (int i=1; i<=Value; i++)
+  {
+      fact = fact * i;
+  }
+  System.out.println("factorial for :" + Value +"is" + fact);
+}
+}
+
+ 
+
+3. prime number check
+
+ 
+
+import java.util.Scanner;
+class Prime {
+    public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+
+  System.out.println("Enter a number :");
+  int Value = sc.nextInt();
+
+  if (Value % 2 == 0 ){
+     System.out.println(" Its not a prime number");
+  }
+  else
+  {
+      System.out.println(" Its a prime number");
+  }
+
+    }
+}
+
+ 
+
+ 
+
+5. fibanocci for given n
+import java.util.Scanner;
+class Fibanocci {
+    public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+
+  System.out.println("Enter a number :");
+  int Value = sc.nextInt();
+  int n1 = 0;
+  int n2 = 1;
+  System.out.println(" " + n1);
+  System.out.println(" " + n2);
+  int n3;
+for(int i=2; i<Value ; i++)
+{
+     n3 = n1 + n2;
+     System.out.println(" " + n3);
+     n1 = n2;
+     n2 = n3;
+}
+
+    }
+}
+
+ 
+
+ 
+
+6.write a sum of digits entered
+
+ 
+
+import java.util.Scanner;
+class SUM {
+    public static void main(String[] args) {
+  Scanner sc = new Scanner(System.in);
+
+  System.out.println("Enter a number :");
+  int Value = sc.nextInt();
+  int sum = 0;
+  int M;
+for(int i=1; i<Value ; i++)
+{
+     d = sc.nextInt();
+     sum = sum + M;
+}
+    System.out.println("sum of digits :" + sum);
+    }
+}

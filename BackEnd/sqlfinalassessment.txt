@@ -1,0 +1,11 @@
+
+-- 1.select SP.SPName from SalesPerson SP join Ordr O on SP.SPId = O.SId where O.ONum = 'O2';
+-- 2.select OL.ONum, OL.ItemCode, OL.Qty, SP.SPId from orderline OL join ordr O on OL.ONum = O.ONum join salesperson SP on O.SId = SP.SPId order by OL.ONum, OL.ItemCode;
+-- 3.select SP.SPName, O.ONum from salesperson SP join ordr O on SP.SPId = O.SId order by SP.SPName, O.ONum;
+-- 4.select SP.SPName, O.ONum from salesperson SP left join ordr O on SP.SPId = O.SId;
+-- 5.select SPName from salesperson where SPId in (select SId from ordr);
+-- 6.select SPName from salesperson where SPId = (select SId from ordr where ONum = 'O3');
+-- 7.select OL.ONum, count(OL.ItemCode) as TotalLines from orderline OL group by OL.ONum having count(OL.ItemCode) >= 2;
+-- 8.select ICode, IDesc, UnitPrice from stock where UnitPrice > (select avg(UnitPrice) from stock);
+-- 9.select OL.ONum, sum(OL.Qty * S.UnitPrice) as OrderValue from orderline OL join stock S on OL.ItemCode = S.ICode group by OL.ONum;
+-- 10.select OL.ONum, OL.ItemCode, OL.Qty, S.UnitPrice, (OL.Qty * S.UnitPrice) as LineValue from orderline OL join stock S on OL.ItemCode = S.ICode where (OL.Qty * S.UnitPrice) < (select avg(OL2.Qty * S2.UnitPrice) from orderline OL2 inner join stock S2 on OL2.ItemCode = S2.ICode);
